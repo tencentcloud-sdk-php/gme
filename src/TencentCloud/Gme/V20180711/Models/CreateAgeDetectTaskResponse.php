@@ -18,19 +18,19 @@ namespace TencentCloud\Gme\V20180711\Models;
 use TencentCloud\Common\AbstractModel;
 
 /**
- * DescribeAppStatistics返回参数结构体
+ * CreateAgeDetectTask返回参数结构体
  *
- * @method DescribeAppStatisticsResp getData() 获取应用用量统计数据
- * @method void setData(DescribeAppStatisticsResp $Data) 设置应用用量统计数据
+ * @method string getTaskId() 获取本次任务提交后唯一id，用于获取任务运行结果
+ * @method void setTaskId(string $TaskId) 设置本次任务提交后唯一id，用于获取任务运行结果
  * @method string getRequestId() 获取唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
  * @method void setRequestId(string $RequestId) 设置唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
  */
-class DescribeAppStatisticsResponse extends AbstractModel
+class CreateAgeDetectTaskResponse extends AbstractModel
 {
     /**
-     * @var DescribeAppStatisticsResp 应用用量统计数据
+     * @var string 本次任务提交后唯一id，用于获取任务运行结果
      */
-    public $Data;
+    public $TaskId;
 
     /**
      * @var string 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
@@ -38,7 +38,7 @@ class DescribeAppStatisticsResponse extends AbstractModel
     public $RequestId;
 
     /**
-     * @param DescribeAppStatisticsResp $Data 应用用量统计数据
+     * @param string $TaskId 本次任务提交后唯一id，用于获取任务运行结果
      * @param string $RequestId 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
      */
     function __construct()
@@ -54,9 +54,8 @@ class DescribeAppStatisticsResponse extends AbstractModel
         if ($param === null) {
             return;
         }
-        if (array_key_exists("Data",$param) and $param["Data"] !== null) {
-            $this->Data = new DescribeAppStatisticsResp();
-            $this->Data->deserialize($param["Data"]);
+        if (array_key_exists("TaskId",$param) and $param["TaskId"] !== null) {
+            $this->TaskId = $param["TaskId"];
         }
 
         if (array_key_exists("RequestId",$param) and $param["RequestId"] !== null) {
